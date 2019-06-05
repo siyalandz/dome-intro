@@ -8,35 +8,35 @@ var billTotalElement = document.querySelector(".billTotal");
 var billStringElement = document.querySelector(".billString");
 
 //create the function that will be called when the calculate button is pressed
-function calculateBtnClicked(){
+function calculateBtnClicked() {
     // logic goes var billString = billStringField.value;
-    var billString  = billStringElement.value;
+    var billString = billStringElement.value;
     //split the string
     var billItems = billString.split(",");
     // a variable for the total phone bill.
     var billTotal = 0;
     //loop over all the bill items
-    for (var i=0;i<billItems.length;i++){
+    for (var i = 0; i < billItems.length; i++) {
         var billItem = billItems[i].trim();
-        if (billItem === "call"){
+        if (billItem === "call") {
             billTotal += 2.75;
-        }
-        else if (billItem === "sms"){
+        } else if (billItem === "sms") {
             billTotal += 0.75;
         }
     }
-    calculateBtnElem
+    //calculateBtnElem
     //round to two decimals
     var roundedBillTotal = billTotal.toFixed(2);
-    billstrigElement.innerHTML = roundedBillTotal;
-    
+    billTotalElement.innerHTML = roundedBillTotal;
+
     if (totalCost >= 50) {
-        // adding the danger class will make the text red
-         totalCostElem.classList.add("danger");
-     } if (totalCost >= 30) {
+        //adding the danger class will make the text red
+        totalCostElem.classList.add("danger");
+    }
+    if (totalCost >= 30) {
         totalCostElem.classList.add("warning");
- 
-  }
+
+    }
 }
 
 
@@ -48,6 +48,6 @@ calculateBtnElem.addEventListener('click', calculateBtnClicked);
 //  * check if it is a call or an sms and add the right amount to the overall total
 //  * once done looping over all the entries - display the total onto the screen in the billTotal element
 
-    // get the string entered in the textArea
-    
+// get the string entered in the textArea
+
 //link the function to a click event on the calculate button
