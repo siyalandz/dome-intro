@@ -1,28 +1,16 @@
 //get a reference to the calculate button
-var calculateBtn = document.querySelector(".calculateBtn");
+var calculateBtnElem = document.querySelector(".calculateBtn");
 
 //get a reference to the billTotal element
-var  billTotal = document.querySelector(".billTotal");
+var billTotalElement = document.querySelector(".billTotal");
 
 //get a reference to the billString
-var billString = document.querySelector(".billStrng");
-
-
+var billStringElement = document.querySelector(".billString");
 
 //create the function that will be called when the calculate button is pressed
 function calculateBtnClicked(){
-    // logic goes here
-}
-
-calculateBtn.addEventListener('click', calculateBtnClicked);
-
-//  * this function should read the string value entered - split it on a comma.
-//  * loop over all the entries in the the resulting list
-//  * check if it is a call or an sms and add the right amount to the overall total
-//  * once done looping over all the entries - display the total onto the screen in the billTotal element
-function calculateBtnClicked(){
-    // get the string entered in the textArea
-    var billString = billStringField.value;
+    // logic goes var billString = billStringField.value;
+    var billString  = billStringElement.value;
     //split the string
     var billItems = billString.split(",");
     // a variable for the total phone bill.
@@ -37,9 +25,29 @@ function calculateBtnClicked(){
             billTotal += 0.75;
         }
     }
-    
+    calculateBtnElem
     //round to two decimals
     var roundedBillTotal = billTotal.toFixed(2);
-    billTotalElement.innerHTML = roundedBillTotal;
+    billstrigElement.innerHTML = roundedBillTotal;
+    
+    if (totalCost >= 50) {
+        // adding the danger class will make the text red
+         totalCostElem.classList.add("danger");
+     } if (totalCost >= 30) {
+        totalCostElem.classList.add("warning");
+ 
+  }
 }
+
+
+
+calculateBtnElem.addEventListener('click', calculateBtnClicked);
+
+//  * this function should read the string value entered - split it on a comma.
+//  * loop over all the entries in the the resulting list
+//  * check if it is a call or an sms and add the right amount to the overall total
+//  * once done looping over all the entries - display the total onto the screen in the billTotal element
+
+    // get the string entered in the textArea
+    
 //link the function to a click event on the calculate button
