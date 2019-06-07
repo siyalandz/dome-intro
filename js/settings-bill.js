@@ -6,14 +6,14 @@ var totalSettings = document.querySelector(".totalSettings");
 //ar settingsbillBtn = document.querySelector(".settingsbillBtn");
 var settingsbillBtn = document.querySelector(".settingsbillBtn");
 // get refences to all the settings fields
-var callCostSett = document.querySelector(".callCostsetting");
+var callCostSett = document.querySelector(".callCostSetting");
 var smsCostSett = document.querySelector(".smsCostSetting");
 var warningLevcallsTotallSetting = document.querySelector(".warningLevelSetting");
 var criticalLecallsTotalelSetting = document.querySelector(".criticalLevelSetting");
 //var calculateBtn = do ment.querySelector(".calculateBtn");
-var addButton = document.querySelector(".button");
+var button = document.querySelector(".button");
 //get a reference to the billTotal element
-//var  billTotal = document.querySelector(".billTotal");
+//var  billTotal = docutotalSettingsment.querySelector(".billTotal");
 var billTotal = document.querySelector(".billTotal");
 //get a reference to the billString
 //var billString = document.querySelector(".billStrng");
@@ -21,31 +21,83 @@ var billString = document.querySelector(".billString");
 //get a reference to the add button
 var callsTotalSttng = 0;
 var smsTotalSttng = 0;
-
-addButton.addEventListener('click', () => {
+var totalS = 0;
+button.addEventListener('click', () => {
 
     var elem = document.querySelector("input[name='billItemTypeWithSettings']:checked");
 
     if (elem.value === "call") {
-        callsTotalSttng += 2.75
+        callsTotalSttng += Number(callCostSett.value);
     } else if (elem.value === "sms") {
-        smsTotalSttng += 0.75;
+        smsTotalSttng += Number(smsCostSett.value);
     }
+    
+    callTotalSettings.innerHTML = callsTotalSttng.toFixed(2);
+    smsTotalSettings.innerHTML = smsTotalSttng.toFixed(2);
+    totalS = smsTotalSttng + callsTotalSttng;
+    totalSettings.innerHTML = totalS.toFixed(2);
 
-});
+
+       colourIndicator();
+    // if(totalS >= warningLevcallsTotallSetting.value) {
+    //     totalSettings.classList.add("warning");
+    //  }
+     
+    //if(totalS >= criticalLecallsTotalelSetting.value) {
+         //adding the danger class will make the text red
+        //  totalSettings.classList.add("danger"); 
+        //     //adding the danger class will make the text red
+        //     button.disabled = true;
+        //  } 
+      })  
+
+
+
+      function colourIndicator(){
+        if(totalS >= warningLevcallsTotallSetting.value && totalS < criticalLecallsTotalelSetting.value) {
+            totalSettings.classList.add("warning"); 
+            totalSettings.classList.remove("danger"); 
+         }
+         
+        if(totalS >= criticalLecallsTotalelSetting.value) {
+             //adding the danger class will make the text red
+             totalSettings.classList.add("danger"); 
+             totalSettings.classList.remove("warning"); 
+                //adding the danger class will make the text red
+                button.disabled = true;
+             } 
+          else {
+            button.disabled = false;
+          }
+      };
+
+     
+
 
 //get a reference to the 'Update settings' button
 var updateSettingsButton = document.querySelector('.updateSettings');
 
-updateSettingsButton.addEventListener('click',() => {
+updateSettingsButton.addEventListener('click', () => {
     var callCostSettVal = callCostSett.value
     var smsCostSettVal = smsCostSett.value
-    var warningLevcallsTotallSettValue = warningLevelSett.value
-    var criticalLecallsTotalelSettVal = criticalLevelSett.value
-   
+    var warningLevcallsTotallSettValue = warningLevcallsTotallSetting.value
+    var criticalLecallsTotalelSettVal = criticalLecallsTotalelSetting.value
+
+colourIndicator();
+    // if(updateSettingsButton){
+    //   button.disabled = false;
+    //   totalSettings.classList.remove("danger");
+    //   totalSettings.classList.remove("warning");
+      
+    //   }  else if(warningLevcallsTotallSetting.value >"warningLevelSet"){
+    //     totalSettings.classList.add("warning");
+    //   }
+    //   else if(warningLevcallsTotallSetting.value >"criticalLevelSettin"){
+    //     totalSettings.classList.add("danger");
+    //   }
 })
 //add an event listener for when the add button is pressed
- //addbutton.addEventListener('click',updateSettingsButton)
+ //button.addEventListener('click',updateSettingsButton)
  
 
 
