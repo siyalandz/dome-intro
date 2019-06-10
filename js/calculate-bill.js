@@ -35,9 +35,18 @@ function calculateBtnClicked() {
     }
     if (billTotal >= 30) {
         billTotalElement.classList.add("warning");
-
     }
-}
+    if (billTotal <= 50) {
+        //adding the danger class will make the text red
+        billTotalElement.classList.remove("danger");
+    }
+    if (billTotal <= 30) {
+        billTotalElement.classList.remove("warning");
+    }
+    }
+    
+    
+
 
 
 

@@ -59,16 +59,23 @@ button.addEventListener('click', () => {
             totalSettings.classList.remove("danger"); 
          }
          
+         
         if(totalS >= criticalLecallsTotalelSetting.value) {
              //adding the danger class will make the text red
              totalSettings.classList.add("danger"); 
              totalSettings.classList.remove("warning"); 
                 //adding the danger class will make the text red
                 button.disabled = true;
-             } 
+             
+             }
           else {
             button.disabled = false;
           }
+
+    
+
+         
+
       };
 
      
@@ -84,17 +91,17 @@ updateSettingsButton.addEventListener('click', () => {
     var criticalLecallsTotalelSettVal = criticalLecallsTotalelSetting.value
 
 colourIndicator();
-    // if(updateSettingsButton){
-    //   button.disabled = false;
-    //   totalSettings.classList.remove("danger");
-    //   totalSettings.classList.remove("warning");
+    if(updateSettingsButton){
+      button.disabled = false;
+      totalSettings.classList.remove("danger");
+      totalSettings.classList.remove("warning");
       
-    //   }  else if(warningLevcallsTotallSetting.value >"warningLevelSet"){
-    //     totalSettings.classList.add("warning");
-    //   }
-    //   else if(warningLevcallsTotallSetting.value >"criticalLevelSettin"){
-    //     totalSettings.classList.add("danger");
-    //   }
+      }  else if(warningLevcallsTotallSetting.value <="warningLevelSet"){
+        totalSettings.classList.add("warning");
+      }
+      else if(warningLevcallsTotallSetting.value <="criticalLevelSettin"){
+        totalSettings.classList.add("danger");
+      }
 })
 //add an event listener for when the add button is pressed
  //button.addEventListener('click',updateSettingsButton)
