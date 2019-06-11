@@ -31,54 +31,64 @@ button.addEventListener('click', () => {
     } else if (elem.value === "sms") {
         smsTotalSttng += Number(smsCostSett.value);
     }
-    
+
     callTotalSettings.innerHTML = callsTotalSttng.toFixed(2);
     smsTotalSettings.innerHTML = smsTotalSttng.toFixed(2);
     totalS = smsTotalSttng + callsTotalSttng;
     totalSettings.innerHTML = totalS.toFixed(2);
+    colourIndicator();
+
+    //    col //  if(totalS >= warningLevcallsTotallSetting.value) {
+    //      totalSettings.classList.add("warning");
+    //   }
+    //  if //  if(totalS >= warningLevcallsTotallSetting.value) {
+    //      totalSettings.classList.add("warning");
+    //   }llSetting.value) {
+    //     //  if(totalS >= warningLevcallsTotallSetting.value) {
+    //      totalSettings.classList.add("warning");
+    //   }"warning");
+    //   } //  if(totalS >= warningLevcallsTotallSetting.value) {
+    //      totalSettings.classList.add("warning");
+    //   }
+
+    //if(tcolourIndicatorotalS >= criticalLecallsTotalelSetting.value) {
+    //adding the danger class will make the text red
+    //  totalSettings.classList.add("danger"); 
+    //     //adding the danger class will make the text red
+    //     button.disabled = true;
+    //  } 
+})
 
 
-       colourIndicator();
-    // if(totalS >= warningLevcallsTotallSetting.value) {
-    //     totalSettings.classList.add("warning");
-    //  }
-     
-    //if(totalS >= criticalLecallsTotalelSetting.value) {
-         //adding the danger class will make the text red
-        //  totalSettings.classList.add("danger"); 
-        //     //adding the danger class will make the text red
-        //     button.disabled = true;
-        //  } 
-      })  
+
+function colourIndicator() {
+    if (totalS >= warningLevcallsTotallSetting.value && totalS < criticalLecallsTotalelSetting.value) {
+        totalSettings.classList.add("warning");
+        totalSettings.classList.remove("danger");
+    }
+
+
+    if (totalS >= criticalLecallsTotalelSetting.value) {
+        //adding the danger class will make the text red
+        totalSettings.classList.add("danger");
+        totalSettings.classList.remove("warning");
+        //addcolourIndicatoring the danger class will make the text red
+        button.disabled = true;
+
+    } else { 
+        totalSettings.classList.remove("danger");
+       // totalSettings.classList.remove("warning");
+        button.disabled = false;
+
+    }
 
 
 
-      function colourIndicator(){
-        if(totalS >= warningLevcallsTotallSetting.value && totalS < criticalLecallsTotalelSetting.value) {
-            totalSettings.classList.add("warning"); 
-            totalSettings.classList.remove("danger"); 
-         }
-         
-         
-        if(totalS >= criticalLecallsTotalelSetting.value) {
-             //adding the danger class will make the text red
-             totalSettings.classList.add("danger"); 
-             totalSettings.classList.remove("warning"); 
-                //adding the danger class will make the text red
-                button.disabled = true;
-             
-             }
-          else {
-            button.disabled = false;
-          }
 
-    
 
-         
+};
 
-      };
 
-     
 
 
 //get a reference to the 'Update settings' button
@@ -90,22 +100,23 @@ updateSettingsButton.addEventListener('click', () => {
     var warningLevcallsTotallSettValue = warningLevcallsTotallSetting.value
     var criticalLecallsTotalelSettVal = criticalLecallsTotalelSetting.value
 
-colourIndicator();
-    if(updateSettingsButton){
-      button.disabled = false;
-      totalSettings.classList.remove("danger");
-      totalSettings.classList.remove("warning");
-      
-      }  else if(warningLevcallsTotallSetting.value <="warningLevelSet"){
-        totalSettings.classList.add("warning");
-      }
-      else if(warningLevcallsTotallSetting.value <="criticalLevelSettin"){
-        totalSettings.classList.add("danger");
-      }
+    colourIndicator();
+    // if(updateSettingsButton){
+    //   button.disabled = false;
+    //   totalSettings.classList.remove("danger");
+    //   totalSettings.classList.remove("warning");
+
+    //   }  else if(warningLevcallsTotallSetting.value <="warningLevelSet"){
+    //     totalSettings.classList.add("warning");
+    //   }
+    //   else if(warningLevcallsTotallSetting.value <="criticalLevelSettin"){
+
+
+    //   }
 })
 //add an event listener for when the add button is pressed
- //button.addEventListener('click',updateSettingsButton)
- 
+//button.addEventListener('click',updateSettingsButton)
+
 
 
 
