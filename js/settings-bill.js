@@ -54,8 +54,7 @@ button.addEventListener('click', () => {
     //if(tcolourIndicatorotalS >= criticalLecallsTotalelSetting.value) {
     //adding the danger class will make the text red
     //  totalSettings.classList.add("danger"); 
-    //     //adding the danger class will make the text red
-    //     button.disabled = true;
+    //  button.disabled = true;
     //  } 
 })
 
@@ -81,11 +80,6 @@ function colourIndicator() {
         button.disabled = false;
 
     }
-
-
-
-
-
 };
 
 

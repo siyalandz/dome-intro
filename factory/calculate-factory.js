@@ -9,8 +9,7 @@ function phoneBillFactory(){
     for (var i = 0; i < billItems.length; i++) {
         var billItem = billItems[i].trim();
         if (billItem === "call") {
-            billTotalremove: removeFromBill
-            += 2.75;
+           billTotal += 2.75;
         } else if (billItem === "sms") {
             billTotal += 0.75;
         }

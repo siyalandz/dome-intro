@@ -36,7 +36,7 @@ function calculateBtnClicked() {
     if (billTotal >= 30) {
         billTotalElement.classList.add("warning");
     }
-    if (billTotal <= 50) {
+    if (billTotal <= 50) {call, sms, call, sms, sms
         //adding the danger class will make the text red
         billTotalElement.classList.remove("danger");
     }
