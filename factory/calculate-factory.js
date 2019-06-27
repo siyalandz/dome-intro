@@ -1,25 +1,24 @@
 function phoneBillFactory(){
 
-    function addToBill(){
+    function addToBill(billString){
+        var billItems = billString.split(",");
 
-    var billItems = billString.split(",");
-    
-    var billTotal = 0;
+        var billTotal = 0;
 
-    for (var i = 0; i < billItems.length; i++) {
-        var billItem = billItems[i].trim();
-        if (billItem === "call") {
-           billTotal += 2.75;
-        } else if (billItem === "sms") {
-            billTotal += 0.75;
+        for (var i = 0; i < billItems.length; i++) {
+            var billItem = billItems[i].trim();
+            if (billItem === "call") {
+                billTotal += 2.75;
+            } else if (billItem === "sms") {
+                billTotal += 0.75;
+            }
         }
+        return billTotal
     }
-return billTotal
-}
 
     return {
 
-        add: addToBill,
+        addToBill,
     
 
     } 

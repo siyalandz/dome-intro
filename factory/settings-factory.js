@@ -14,7 +14,9 @@ function SettingsBillFactory() {
     };
 
     function upDateSettingBill(updateValues) {
+        console.log(updateValues);
         updateObj = updateValues;
+        console.log(updateObj);
     };
 
     function changeColor() {
@@ -39,7 +41,7 @@ function SettingsBillFactory() {
     }
 
     return {
-        addTotalBill,
+       addTotalBill,
         upDateSettingBill,
         changeColor,
         getAllTotals
