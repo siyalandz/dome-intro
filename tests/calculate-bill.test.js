@@ -2,10 +2,7 @@ describe('a function that calculate the phone bills ',function(){
     it('it should return the calls made ', function(){
         
         
-        var calls = phoneBillFactory('phone calls')
-        var sms = phoneBillFactory('smss received')
-        var TotalS = phoneBillFactory('calls + sms')
-        // assert.equal()
+       
         assert.equal(phoneBillFactory().addToBill("call"), 2.75)
         
         
@@ -23,7 +20,7 @@ it('should return orange when Totalbill reach the warningLevel', function(){
     assert.equal(phoneBillFactory().addToBill('sms,sms,sms,call,sms,sms,sms,call.sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,'), '38.75')
 })
 it('should return red when Totalbill reach Critical Level', function(){
-    assert.equal(phoneBillFactory().addToBill('sms,sms,sms,call,sms,sms,sms,call.sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,call,sms,sms,call,sms,sms,'), '51.5')
+    assert.equal(phoneBillFactory().addToBill('sms,sms,sms,call,sms,sms,sms,call.sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,sms,call,sms,sms,call,sms,sms,call,sms,sms,'), '51.50')
 })
 
 

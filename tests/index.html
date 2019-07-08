@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
@@ -7,27 +8,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    
-    <title>Document</title>
+
+    <title>Bafana Bafana</title>
 </head>
+
 <body>
 
-        <div id="mocha"></div>
-        <script>
-            mocha.setup('bdd');
-            var assert = chai.assert;
-        </script>
+    <div id="mocha"></div>
+    <script>
+        mocha.setup('bdd');
+        var assert = chai.assert;
+    </script>
 
-<script src="../factory/calculate-factory.js" charset="utf-8"></script>
-<script src="../tests/calculate-bill.test.js" charset="utf-8"></script>
+    <script src="../factory/calculate-factory.js" charset="utf-8"></script>
+    <script src="../tests/calculate-bill.test.js" charset="utf-8"></script>
+    <script src="../factory/settings-factory.js" charset="utf-8"></script>
+    <script src="../tests/settings-bill.test.js" charset="utf-8"></script>
 
-       
-       <script src="../factory/settings-factory.js" charset="utf-8"></script>
-       <script src="../tests/settings-bill.test.js" charset="utf-8"></script>
-       
-       <script>
-            mocha.checkLeaks();
-            mocha.run();
-        </script>
+    <script>
+        mocha.checkLeaks();
+        mocha.run();
+    </script>
 </body>
+
 </html>

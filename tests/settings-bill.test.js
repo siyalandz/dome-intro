@@ -9,35 +9,35 @@ describe('Settings Bill Factory Functions', function (){
             'warningLevel': 30.00,
             'critical': 50.00
         };
-        instance.upDateSettingBill(newObj)
+        instance.updateSettingBill(newObj)
         instance.addTotalBill('call');
         var total = instance.getAllTotals();
-        console.log(total);
+       // console.log(total);
         assert.equal(total['total'], 2.75);
     }); 
 
 
-    it('should return the colour orange when reach the  warning level', function(){
+    it('should return the colour orange when totalS reach the  warning level', function(){
         // var instance = SettingsBillFactory()
        var newObj1 = {
            'warningLevel': 30.00,
                'critical': 50.00
        }
-       instance.upDateSettingBill(newObj1)
-           // instance.addTotalBill('warningLevel')
+       instance.updateSettingBill(newObj1)
+           instance.addTotalBill('warningLevel')
            // console.log(warningLevel);
-           assert.equal()
+           assert.equal('warningLevel'[30.00])
    });
 
-it('it should return the red color when reach critical level is reached', function(){
+it('it should return the red color when totalS reach critical level is reached', function(){
     var newObj2 = {
         'warningLevel': 30.00,
             'critical': 50.00
     }
-    instance.upDateSettingBill(newObj2)
-        // instance.addTotalBill('warningLevel')
+    instance.updateSettingBill(newObj2)
+         instance.addTotalBill('critical')
         // console.log(warningLevel);
-        assert.equal()  
+        assert.equal('critical'[50.00])  
 })
 
 }); 

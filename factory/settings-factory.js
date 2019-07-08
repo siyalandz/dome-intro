@@ -13,10 +13,10 @@ function SettingsBillFactory() {
         totalS = callsTotalSttng + smsTotalSttng;
     };
 
-    function upDateSettingBill(updateValues) {
-        console.log(updateValues);
+    function updateSettingBill(updateValues) {
+       // console.log(updateValues);
         updateObj = updateValues;
-        console.log(updateObj);
+       // console.log(updateObj);
     };
 
     function changeColor() {
@@ -27,8 +27,9 @@ function SettingsBillFactory() {
         // check if toatal exceeds critical
         else if (totalS >= updateObj['criticalLevel']) {
             return 'danger';
-        }
-
+        } 
+        else if (totalS <= updateObj['remove warningLevel'])
+    return "black"
     };
 
 
@@ -42,7 +43,7 @@ function SettingsBillFactory() {
 
     return {
        addTotalBill,
-        upDateSettingBill,
+        updateSettingBill,
         changeColor,
         getAllTotals
     };
