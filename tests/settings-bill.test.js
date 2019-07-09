@@ -26,7 +26,7 @@ describe('Settings Bill Factory Functions', function (){
        instance.updateSettingBill(newObj1)
            instance.addTotalBill('warningLevel')
            // console.log(warningLevel);
-           assert.equal('warningLevel'[30.00])
+           assert.equal('warningLevel'['orange'])
    });
 
 it('it should return the red color when totalS reach critical level is reached', function(){
@@ -37,7 +37,7 @@ it('it should return the red color when totalS reach critical level is reached',
     instance.updateSettingBill(newObj2)
          instance.addTotalBill('critical')
         // console.log(warningLevel);
-        assert.equal('critical'[50.00])  
+        assert.equal('critical'['red'])  
 })
 
 }); 
